@@ -1,0 +1,26 @@
+<div ng-controller = 'PollsController'>
+<title>Create Poll</title>
+</head>
+<body>
+	<a href="#/dashboard">Cancel</a>
+	<h3>Put the question and options here:</h3>
+	<form name = 'pollForm' >
+		<p>Question: <input name = 'question' type = 'text' ng-model = 'newPoll.question' ng-minlength = "8" required></p>
+		<p ng-show = 'pollForm.question.$error.required && !pollForm.question.$pristine'>Question is required</p>
+		<p ng-show = 'pollForm.question.$error.minlength'>Question is too short</p>
+		<p>Option 1: <input name = 'option1' type = 'text' ng-model = 'newPoll.a' required ng-minlength = "3"></p>
+		<p ng-show = 'pollForm.option1.$error.required && !pollForm.option1.$pristine'>Option is required</p>
+		<p ng-show = 'pollForm.option1.$error.minlength'>Option is too short</p>
+		<p>Option 2: <input name = 'option2' type = 'text' ng-model = 'newPoll.b' required ng-minlength = "3"></p>
+		<p ng-show = 'pollForm.option2.$error.required && !pollForm.option2.$pristine'>Option is required</p>
+		<p ng-show = 'pollForm.option2.$error.minlength'>Option is too short</p>
+		<p>Option 3: <input name = 'option3' type = 'text' ng-model = 'newPoll.c' required ng-minlength = "3"></p>
+		<p ng-show = 'pollForm.option3.$error.required && !pollForm.option3.$pristine'>Option is required</p>
+		<p ng-show = 'pollForm.option3.$error.minlength'>Option is too short</p>
+		<p>Option 4: <input name = 'option4' type = 'text' ng-model = 'newPoll.d' required ng-minlength = "3"></p>
+		<p ng-show = 'pollForm.option4.$error.required && !pollForm.option4.$pristine'>Option is required</p>
+		<p ng-show = 'pollForm.option4.$error.minlength'>Option is too short</p>
+	</form>
+		<a href="#/dashboard" ng-click = 'addPoll()'><button ng-disabled = 'pollForm.$invalid'>Create Poll</button></a>
+</body>
+</div>

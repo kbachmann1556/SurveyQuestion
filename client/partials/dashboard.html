@@ -1,0 +1,24 @@
+<div ng-controller = 'PollsController'>
+<title>List Polls</title>
+</head>
+<body>
+	{{user.name}}
+	<a href="#/create">Create a New Poll</a> | <a href="#/">Logout</a>
+	<h3>Current Polls:</h3>
+	<input type = 'text' ng-model = 'filter_name' placeholder = 'search...'>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Survay Question</td>
+			<td>Date Posted</td>
+			<td>Action</td>
+		</tr>
+		<tr ng-repeat = 'poll in polls | filter: filter_name'>
+			<td><span ng-bind = 'poll.user'></span></td>
+			<td><a href="#/poll/{{poll._id}}"><span ng-bind = 'poll.question'></span></a></td>
+			<td><span ng-bind = 'poll.date | date: medium'></span></td>
+			<td ng-if = 'poll.user == user.name'><a href="#/dashboard" ng-click = 'removePoll(poll._id)'>Delete</a></td>
+		</tr>
+	</table>
+</body>
+</div>
