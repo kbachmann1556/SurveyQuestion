@@ -2,6 +2,7 @@
 <title>Create Poll</title>
 </head>
 <body>
+	<div class = "container">
 	<a href="#/dashboard">Cancel</a>
 	<h3>Put the question and options here:</h3>
 	<form name = 'pollForm' >
@@ -22,5 +23,6 @@
 		<p ng-show = 'pollForm.option4.$error.minlength'>Option is too short</p>
 	</form>
 		<a href="#/dashboard" ng-click = 'addPoll()'><button ng-disabled = 'pollForm.$invalid'>Create Poll</button></a>
+	</div>
 </body>
 </div>

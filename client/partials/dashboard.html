@@ -2,9 +2,16 @@
 <title>List Polls</title>
 </head>
 <body>
-	{{user.name}}
-	<a href="#/create">Create a New Poll</a> | <a href="#/">Logout</a>
-	<h3>Current Polls:</h3>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col s2">
+				Welcome {{user.name}}
+			</div>
+			<div class = "col s3 offset-s7">
+				<a href="#/create">Create a New Poll</a> | <a href="#/">Logout</a>
+			</div>
+		</div>
+		<h3>Current Polls:</h3>
 	<input type = 'text' ng-model = 'filter_name' placeholder = 'search...'>
 	<table>
 		<tr>
@@ -20,5 +27,6 @@
 			<td ng-if = 'poll.user == user.name'><a href="#/dashboard" ng-click = 'removePoll(poll._id)'>Delete</a></td>
 		</tr>
 	</table>
+	</div>
 </body>
 </div>
